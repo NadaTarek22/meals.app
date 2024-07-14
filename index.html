@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JQuery 12</title>
+  <title>Yummy</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
                 
   <link rel="stylesheet" href="CSS/all.min.css">
   <link rel="stylesheet" href="CSS/bootstrap.min.css">
@@ -13,153 +14,209 @@
 <body>
 
 
-<!--Start of Home section-->
-<section id="home">
-  <div class="imageLayer">
+<!-- Loading Screen -->
+<div id="loader" class="loader position-fixed d-flex top-0 start-0 end-0 bottom-0  bg-black  justify-content-center align-items-center" >
+  <i class="fa fa-spinner fa-spin fa-5x "></i>
+</div>
 
-    <div class="sideNav">
-      <a id="closeBtn" href="#" class="text-end" >×</a>
-      <a href="#home" >Home</a>
-      <a href="#duration" >Duration</a>
-      <a href="#details" >Details</a>
-      <a href="#contact" >Contact</a>
+<!--Start of side Nav section-->
+<div id="side-nav" class="bg-white position-fixed top-0 d-flex min-vh-100">
+  <div class="nav-tab d-flex flex-column justify-content-between min-vh-100 p-4 ">
+    <div class="links">
+      <ul class="list-unstyled overflow-hidden ">
+        <li id="search" class="py-2 position-relative ">Search</li>
+        <li id="categories" class="py-2 position-relative ">Categories</li>
+        <li id="area" class="py-2 position-relative ">Area</li>
+        <li id="ingredients" class="py-2 position-relative ">Ingredients</li>
+        <li id="contact" class="py-2 position-relative ">Contact Us</li>
+      </ul>
+
     </div>
-    <div class="homeContent ">
-      <h2 class="text-center">ُEgyption Party</h2>
-      <p class="text-center">Let's have Fun</p>
-      <span class="open" >☰ open</span>
+
+    <div class="nav-footer">
+      <div class="links cursor-pointer">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-solid fa-globe"></i>
+      </div>
+      <div class="footer">
+        <p>
+          Copyright Â© 2019 All Rights <br> Reserved.
+        </p>
+      </div>
     </div>
 
   </div>
 
-</section>
+  <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black">
+    
+    <img class="w-50px" src="images/logo.png" alt="logo-image">
+    
+    <i id="closeBtn" class="fa-solid open-close-icon fa-2x fa-x"></i>
+   
+    <div class="cursor-pointer">
+      <i class="fa-solid fa-globe d-block"></i>
+      <i class="fa-solid fa-share-nodes"></i>
+    </div>
+  </div>
+</div>
+<!--End   of side Nav section-->
+
+<!--Start of Home section-->
+<div id="homeSection" class="container">
+  <div id="meal" class="row py-5 g-4 "></div>
+</div>
 <!--End   of Home section-->
 
+<!--Start of Ingredient section-->
+<div id="homeSecIngred" class="container hidden">
+  <div id="rowOfIngred" class="row py-5 g-4 ">
 
-<!--Start of Slider-Down section-->
-<section class="sliderDownSec" id="duration">
-  <h3 class="title" >ٍSinger one</h3>
-  <div class="paragraph ">
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
   </div>
-  <h3 class="title">ٍSinger two</h3>
-  <div class="paragraph">
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+</div>
+<!--End   of Ingredient section-->
+
+<!--Start of Search Section-->
+<section id="searchSection" class="hidden">
+  <div  class="container w-75 ">
+  <div class="row py-4">
+    <div class="col-lg-6 col-sm-12">
+      <input id="searchByName" class="form-control text-white bg-transparent" placeholder="Search By Name" type="text">
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <input  maxlength="1" id="searchByLetter" class="form-control  text-white bg-transparent" placeholder="Search By First Letter" type="text">
+    </div>
+
   </div>
-  <h3 class="title">ٍSinger three</h3>
-  <div class="paragraph">
-    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"  
+  </div>  
+  <div id="searchSection1" class="container">
+  <div id="meal2" class="row py-5 g-4 ">
+
   </div>
-  <h3 class="title">ٍSinger four</h3>
-  <div class="paragraph">
-    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
   </div>
 </section>
-<!--End   of Slider-Down section-->
+<!--End   of Search Section-->
+
+<!--Start of Categories section-->
+<section class="categoriesSec hidden">
+  <div class="container">
+      <div id="inner"  class="row py-5 g-4 ">
+  </div>
+  </div>
+</section>
+
+<section class="clickOnCategory hidden">
+  <div class="container">
+    <div id="meal3" class="row py-5 g-4">
+
+    </div>
+  </div>
+
+</section>
+<!--End   of Categories section-->
 
 
-<!--Start of Count section-->
-<section class="countImage" id="details">
-  <div class="countLayer">
-    <div class="container text-center">
-      <div class="row ">
-        <div class="col-lg-3  col-md-6 col-sm-12 gy-sm-4 gy-md-4 gy-lg-0">
-          <div class="span">
-            <span id="day"></span>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 gy-sm-4 gy-md-4 gy-lg-0">
-          <div class="span">
-            <span id="hours"></span>
-          </div>         
-        </div>
-        <div class="col-lg-3  col-md-6 col-sm-12 gy-sm-4 gy-md-4 gy-lg-0">
-          <div class="span">
-            <span id="minutes"></span>
-          </div>    
-        </div>
-        <div class="col-lg-3  col-md-6 col-sm-12 gy-sm-4 gy-md-4 gy-lg-0">
-          <div class="span">
-            <span id="seconds"></span>
-          </div>         
-        </div>
-      </div>
+<!--Start of Area section-->
+<section class="areaSection hidden">
+  <div class="container">
+    <div id="areaSection" class="row py-5 g-4">
+
     </div>
   </div>
 </section>
-<!--End   of Count section-->
 
+<section class="clickOnArea hidden">
+  <div class="container">
+    <div id="area1" class="row py-5 g-4">
+
+    </div>
+  </div>
+</section>
+<!--End   of Area section-->
+
+<!--Start of Ingredients section-->
+<section class="ingredientSec hidden ">
+  <div class="container">
+    <div id="ingredSec" class="row py-5 g-4 ">
+
+    </div>
+  </div>
+</section>
+
+<section class="clickOnIngredientSec hidden ">
+  <div class="container">
+    <div id="meal5" class="row py-5 g-4 ">
+
+    </div>
+  </div>
+</section>
+<!--End   of Ingredients section-->
 
 <!--Start of Contact section-->
-<section class="contactSec" id="contact">
+<section class="contactSec hidden">
   <div class="container">
-    <div class="contactHead">
-      <h2>JOIN US</h2>
-      <p id="rowP" >Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-    </div>
-    <div class="row">
-      <div class="col-lg-6">
-        <h3>
-          <strong>CONTACT INFO</strong>
-        </h3>
-        <p id="rowP">Why you should hire me writeup Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque nascetur ridiculus mus.</p>
+    <form action="">
+          <div class="row py-5 g-4 ">
+        <div class="contact min-vh-100 d-flex justify-content-center align-items-center">
+            <div class="container w-75 text-center">
+                <div class="row g-4">
+                  
+                    <div class="col-md-6 col-sm-12">
+                        <input id="nameInput" type="text" class="form-control" placeholder="Enter Your Name">
+                        <div id="nameAlert" class=" d-none alert alert-danger w-100 mt-2 ">
+                          Special characters and numbers not allowed
+                      </div>
+                    </div>
+                      <div class="col-md-6 col-sm-12">
+                        <input id="emailInput" type="email" class="form-control " placeholder="Enter Your Email">                        
+                          <div id="emailAlert" class="hidden alert alert-danger w-100 mt-2 ">
+                            Email not valid *exemple@yyy.zzz
+                          </div>                      
+                      </div>
+                       <div class="col-md-6 col-sm-12">
+                        <input id="phoneInput" type="text" class="form-control " placeholder="Enter Your Phone">
+                        <div id="phoneAlert" class="hidden alert alert-danger w-100 mt-2 ">
+                          Enter valid Phone Number
+                        </div>
+                      </div>                   
+                      <div class="col-md-6 col-sm-12">
+                        <input id="ageInput"  type="number" class="form-control " placeholder="Enter Your Age">                        
+                        <div id="ageAlert" class="hidden alert alert-danger w-100 mt-2 ">
+                          Enter valid age from 12-90
+                        </div>
+                      </div>                                          
+                    <div class="col-md-6 col-sm-12">
+                        <input id="passwordInput" type="password" class="form-control " placeholder="Enter Your Password">                        
+                        <div id="passwordAlert" class="hidden alert alert-danger w-100 mt-2 ">
+                          Enter valid password *Minimum eight characters, at least one letter and one number:*
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <input id="repasswordInput" type="password" class="form-control " placeholder="Repassword">                        
+                        <div id="repasswordAlert" class="hidden alert alert-danger w-100 mt-2">
+                          Enter valid repassword 
+                        </div>
+                      </div>
 
-        <div class="icons">
-          <p>
-            <i class="fa fa-map-marker"></i>
-            New Street 22545, Nexa Road, New York City, USA
-          </p>
-
-          <p class="redClr">
-            <i class="fa fa-envelope "></i>
-            hello@uigrid.com
-          </p>
-
-          <p>
-            <i class="fa-solid fa-phone-flip"></i>
-            001-000-000-000
-          </p>
-
+                </div>
+                <button type="submit"  id="submitBtn" class="btn-disabled btn btn-outline-danger px-2 mt-3">Submit</button>
+            </div>
         </div>
 
-        <div class="socialMedia">
-          <i class="fab fa-twitter fa-fw"></i>
-          <i class="fab fa-facebook-f fa-fw"></i>
-          <i class="fab fa-instagram fa-fw"></i>
-          <i class="fab fa-dribbble fa-fw"></i>
-          <i class="fab fa-pinterest fa-fw"></i>
-
-        </div>
-      </div>
-      <div id="inputs" class="col-sm-12 col-md-12 col-lg-6">
-        <form>
-          <input class="form-control" required type="text" placeholder="Enter Name">
-          <input class="form-control" type="email" required placeholder="Enter Email">
-          <textarea id="textarea" required class="form-control" placeholder="Enter Message"></textarea>
-           
-          <span id="number">100</span>
-          <span >Character Reamining</span>
-
-          <button class="btn">SEND MESSAGE</button>
-        </form>
-      </div>
     </div>
+    </form>
+
   </div>
-
 </section>
 <!--End   of Contact section-->
 
 
-
-
-
-
-  
 <script src="JS/jquery.min.js"></script>
-<script src="JS/jquery.countdown.min.js"></script>
-
 <script src="JS/bootstrap.bundle.min.js"></script>
 <script src="JS/main.js"></script>
+<script src="JS/search.js"></script>
+<script src="JS/regex.js"></script>
 
 </body>
 </html>
